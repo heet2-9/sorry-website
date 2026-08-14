@@ -332,8 +332,8 @@ export default function Celebration() {
           </div>
 
           {easterEggClicks > 0 && easterEggClicks < 5 && (
-            <p className="text-xs text-[#9e6073] animate-pulse pt-3 font-mono">
-              Keep tapping the heart for Aaru's secret... ({5 - easterEggClicks} more) 💗
+            <p className="text-base sm:text-lg md:text-xl font-serif-romantic font-bold text-[#d95d7a] animate-pulse pt-4 tracking-wide">
+              <SafeText text={`Keep tapping the heart for Aaru's secret... (${5 - easterEggClicks} more) 💗`} />
             </p>
           )}
         </div>

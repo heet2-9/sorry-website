@@ -21,6 +21,8 @@ export interface LoveConfig {
     question: string;
     subLine1: string;
     subLine2: string;
+    yesButtonText?: string;
+    noButtonText?: string;
   };
   attemptMessages: {
     attempt1: string;
@@ -92,6 +94,8 @@ export const loveConfig: LoveConfig = {
     question: "Maaf kar dona plss😭",
     subLine1: "I know I can't change what happened.",
     subLine2: "But I hope I can make things better.",
+    yesButtonText: "okayy heetu❤️",
+    noButtonText: "Nhi 🥺",
   },
 
   attemptMessages: {

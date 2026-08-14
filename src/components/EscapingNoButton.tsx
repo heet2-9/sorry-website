@@ -10,6 +10,9 @@ interface EscapingNoButtonProps {
   disabled?: boolean;
 }
 
+import SafeText from "@/components/SafeText";
+import { loveConfig } from "@/config/love";
+
 export default function EscapingNoButton({
   noAttempts,
   onEscapeAttempt,
@@ -106,11 +109,11 @@ export default function EscapingNoButton({
       animate={
         position
           ? {
-              x: position.x,
-              y: position.y,
-              rotate: (Math.random() - 0.5) * (noAttempts > 5 ? 18 : 8),
-              scale: noAttempts > 6 ? 1.05 : 1,
-            }
+            x: position.x,
+            y: position.y,
+            rotate: (Math.random() - 0.5) * (noAttempts > 5 ? 18 : 8),
+            scale: noAttempts > 6 ? 1.05 : 1,
+          }
           : { x: 0, y: 0 }
       }
       transition={{
@@ -122,24 +125,20 @@ export default function EscapingNoButton({
       style={
         position
           ? {
-              position: "fixed",
-              top: 0,
-              left: 0,
-              zIndex: 40,
-            }
+            position: "fixed",
+            top: 0,
+            left: 0,
+            zIndex: 40,
+          }
           : { position: "relative" }
       }
-      className={`px-7 py-3.5 rounded-full font-medium text-lg border transition-colors select-none shadow-md backdrop-blur-md cursor-pointer overflow-visible leading-normal ${
-        disabled
-          ? "opacity-30 pointer-events-none bg-[#ffecef] border-[#f7a8ba] text-[#9e6073]"
-          : "bg-[#fff0f3] border-[#e97d99] text-[#5c2435] hover:bg-[#ffe3ea] hover:border-[#d95d7a] active:scale-95"
-      }`}
+      className={`px-7 py-3.5 rounded-full font-medium text-lg border transition-colors select-none shadow-md backdrop-blur-md cursor-pointer overflow-visible leading-normal ${disabled
+        ? "opacity-30 pointer-events-none bg-[#ffecef] border-[#f7a8ba] text-[#9e6073]"
+        : "bg-[#fff0f3] border-[#e97d99] text-[#5c2435] hover:bg-[#ffe3ea] hover:border-[#d95d7a] active:scale-95"
+        }`}
       aria-label="No option button"
     >
-      <span className="inline-flex items-center gap-1.5 leading-none">
-        <span>No</span>
-        <span className="emoji-icon text-xl leading-none">🥺</span>
-      </span>
+      <SafeText text={loveConfig.opening.noButtonText || "No 🥺"} />
     </motion.button>
   );
 }

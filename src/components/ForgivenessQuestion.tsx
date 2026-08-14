@@ -213,8 +213,7 @@ export default function ForgivenessQuestion() {
                   className={`group relative inline-flex items-center gap-2.5 px-9 py-4 rounded-full bg-gradient-to-r from-[#d95d7a] to-[#e97d99] text-[#fffdfd] font-bold text-xl sm:text-2xl transition-all duration-300 border border-[#e97d99]/40 cursor-pointer ${yesGlow}`}
                   aria-label="Yes I forgive you button"
                 >
-                  <span>Yes</span>
-                  <span className="emoji-icon text-xl sm:text-2xl leading-none">❤️</span>
+                  <SafeText text={opening.yesButtonText || "Yes ❤️"} />
                   <Sparkles className="w-5 h-5 text-[#fffdfd] group-hover:rotate-45 transition-transform" />
                   <span className="absolute -inset-1 rounded-full bg-[#e97d99]/30 animate-pulse blur-md -z-10" />
                 </motion.button>
