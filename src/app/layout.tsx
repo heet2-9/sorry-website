@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "I'm Sorry, My Love | A Digital Apology",
-  description: "A heartfelt, interactive romantic apology experience made specifically for you.",
+  title: "I am Sorryy Aaru🥺",
+  description: "Please forgive meee ",
 };
 
 export const viewport = {
