@@ -184,7 +184,7 @@ export const loveConfig: LoveConfig = {
     oneMoreThing: {
       header: "One More Thing Aarya",
       notPerfectLine: "I don't expect everything to become perfect just because you i made this website for you",
-      actionsMeaningLine: "I just want to make sure my actions slowly give meaning to these promises.",
+      actionsMeaningLine: "And mene joh aaj bula woh bht galat tha ik...me teri situation samaj nhi paya...but i'll make sure agli baar se esa nhi hoga baby",
       sorryMattersLine: "Because saying sorry matters...",
       becomingBetterLine: "But becoming better matters more.",
     },
