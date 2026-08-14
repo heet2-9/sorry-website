@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --bg-deep: #fff5f7;
+  --bg-pink-light: #ffecef;
+  --bg-card: rgba(255, 253, 253, 0.85);
+  --bg-card-hover: rgba(255, 245, 247, 0.95);
+  --border-rose: rgba(233, 125, 153, 0.25);
+  --border-rose-glow: rgba(217, 93, 122, 0.45);
+  --text-primary: #5c2435;
+  --text-secondary: #7d4053;
+  --text-muted: #9e6073;
+  --accent-rose: #e97d99;
+  --accent-crimson: #d95d7a;
+  --accent-deep-rose: #c94f70;
+  --accent-gold: #f7c59f;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background-color: #fff5f7;
+  color: #5c2435;
+  overflow-x: hidden;
+  font-family: var(--font-sans), "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Typography Custom utility classes */
+.font-serif-romantic {
+  font-family: var(--font-serif), "Cormorant Garamond", "Playfair Display", Georgia, serif;
+}
+
+/* Glass Floating Paper Card styling */
+.glass-panel {
+  background: rgba(255, 253, 253, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(233, 125, 153, 0.28);
+  box-shadow: 0 10px 32px 0 rgba(217, 93, 122, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(255, 250, 251, 0.95);
+  border-color: rgba(217, 93, 122, 0.45);
+  box-shadow: 0 14px 40px 0 rgba(217, 93, 122, 0.22);
+  transform: translateY(-2px);
+}
+
+/* Glow effects for blush theme */
+.glow-text-rose {
+  text-shadow: 0 0 20px rgba(233, 125, 153, 0.35), 0 0 40px rgba(217, 93, 122, 0.2);
+}
+
+.glow-box-rose {
+  box-shadow: 0 0 30px rgba(233, 125, 153, 0.3);
+}
+
+.glow-heart {
+  filter: drop-shadow(0 0 18px rgba(217, 93, 122, 0.45));
+}
+
+/* Custom romantic blush scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fff5f7;
+}
+::-webkit-scrollbar-thumb {
+  background: #f7a8ba;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d95d7a;
+}
+
+/* Text Shimmer for blush theme */
+@keyframes shimmerBlush {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #5c2435 0%, #c94f70 40%, #d95d7a 70%, #5c2435 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmerBlush 6s infinite linear;
+}
+
+/* EMOJI SAFETY RULES: Ensures emojis are NEVER masked by gradient background-clip text */
+.text-shimmer .emoji-icon,
+.glow-text-rose .emoji-icon,
+.emoji-icon {
+  display: inline-block !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: initial !important;
+  -webkit-text-fill-color: initial !important;
+  line-height: 1.2 !important;
+  vertical-align: middle !important;
+  padding: 0 0.08em !important;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", Android Emoji, EmojiSymbols, sans-serif !important;
+}
+
+/* Heart pulse animation */
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(217, 93, 122, 0.35)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 28px rgba(217, 93, 122, 0.65)); }
+}
+
+.animate-pulse-romantic {
+  animation: heartPulse 3.5s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
